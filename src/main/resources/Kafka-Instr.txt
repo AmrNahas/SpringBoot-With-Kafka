@@ -1,0 +1,33 @@
+cd C:\kafka_2.13-3.0.0
+
+cd C:\kafka_2.13-3.0.0\kafka_2.13-3.0.0
+
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+D:\kafka_2.12-2.7.0\bin\windows\kafka-server-start.bat D:\kafka_2.12-2.7.0\config\server.properties
+
+0101029530092021366098447
+
+
+=========================================================================================================
+
+
+
+ZooKeeper server run
+C:\kafka_2.13-3.0.0\kafka_2.13-3.0.0\bin\windows\zookeeper-server-start.bat C:\kafka_2.13-3.0.0\kafka_2.13-3.0.0\\config\zookeeper.properties
+
+-------------------------------------------------------------
+kafka server run
+
+D:\kafka_2.12-2.7.0\bin\windows\kafka-server-start.bat D:\kafka_2.12-2.7.0\config\server.properties
+----------------------------------------
+create topic
+D:\kafka_2.12-2.7.0\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+-----------------------------------
+list topic kafka
+D:\kafka_2.12-2.7.0\bin\windows\kafka-topics.bat --list --zookeeper localhost:2181
+
+create producer
+D:\kafka_2.12-2.7.0\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test
+------------------------------------
+create consumer
+D:\kafka_2.12-2.7.0\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
